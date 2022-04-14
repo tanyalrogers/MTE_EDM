@@ -13,7 +13,7 @@ for ser=1:numseries
     sp=metadata{ser,3};
     period=metadata{ser,4};persub=period;
     csvname=['..\data\field_data_interpolated\' sitename '_' num2str(sp) '.csv']
-    data=csvread(csvname);
+    data=csvread(csvname,1);
     decyr=data(:,1);temp=data(:,2);x=data(:,3);Tsteps=length(x);
 
 %% embedding controls
@@ -125,7 +125,7 @@ for row=1:3,
     sp=metadata{ser,3};
     period=metadata{ser,4};persub=period;
     csvname=['..\data\field_data_interpolated\' sitename '_' num2str(sp) '.csv']
-    data=csvread(csvname);
+    data=csvread(csvname,1);
     decyr=data(:,1);temp=data(:,2);x=data(:,3);Tsteps=length(x);
 
 % embedding controls
