@@ -1,0 +1,23 @@
+Site,Species,Series,steps per year
+Narraganset,A. hudsonica,1,52
+Narraganset,A. tonsa,2,52
+Greiffensee,phytoplankton,1,12
+Greiffensee,cyanobacteria,2,12
+Greiffensee,eukaryotes,3,12
+Geneva,Bythotrephes,1,52
+Geneva,Eudiaptomus,2,52
+Geneva,Kellicottia,3,52
+Damos,A.lineatella,1,120
+Damos,A.orana,2,120
+Damos,G.moleasta,3,120
+Tea tortrix,Tortrix,1,73
+Wadden,Acartia_nauplii,1,73
+Wadden,Acartia_copepodite,2,73
+Wadden,Harpacticoida,3,73
+Wadden,Balanidae_nauplii,4,73
+Wadden,Spionida,5,73
+Wadden,T.longicornis_nauplii,6,73
+BATS,zooplankton,1,26
+Portal,Dipodomys_merriami,1,12
+Portal,Dipodomys_ordii,2,12
+Portal,Onychomys_torridus,3,12

@@ -1,0 +1,4 @@
+Site,Species,E_TPC,tau_TPC,R2_TPC,E_TPC_mo,tau_TPC_mo,R2_TPC_mo
+Narraganset,A. hudsonica,9,1,0.786128899,10,1,0.62009217
+Narraganset,A. tonsa,10,1,0.764659632,10,3,0.587894041
+Tea tortrix,Tortrix,2,1,0.621247271,8,1,0.204459787
