@@ -141,6 +141,21 @@ res$delta_E=res$E_MTE-res$E_Simplex
 res$delta_R2=res$R2_MTE-res$R2_Simplex
 res$delta_R2_TPC=res$R2_TPC-res$R2_MTE
 
+range(res$R2_MTE)
+mean(res$R2_MTE)
+range(res$R2_Simplex)
+mean(res$R2_Simplex)
+
+#performance improvement (percent)
+resecto=filter(res, Site!="Portal")
+length(ectoimp <- which(resecto$delta_R2>0))
+mean(resecto$delta_R2[ectoimp]/resecto$R2_Simplex[ectoimp]*100)
+mean(resecto$delta_R2/resecto$R2_Simplex*100)
+#for endotherms
+mean(res$delta_R2[20:22]/res$R2_Simplex[20:22]*100)
+#using tpc
+mean(resecto$delta_R2_TPC/resecto$R2_MTE*100, na.rm=T)
+
 #barplot
 ggplot(reslong, aes(x=SpeciesAb,y=R2, fill=Model)) +
   geom_col(position = position_dodge()) +
@@ -237,5 +252,5 @@ bbmle::AICtab(m1,m2,m3,m4,m5,m6,m7,delta=T,weights=T)
 anova(m2) ##
 anova(m7)
 
-cor(ressub$cv_T^2,log10(ressub$Mass_mg))
-plot(ressub$cv_T^2,log10(ressub$Mass_mg))
+cor(ressub$cv_T2,log10(ressub$Mass_mg))
+plot(ressub$cv_T2,log10(ressub$Mass_mg))
