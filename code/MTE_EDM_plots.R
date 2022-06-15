@@ -252,5 +252,5 @@ bbmle::AICtab(m1,m2,m3,m4,m5,m6,m7,delta=T,weights=T)
 anova(m2) ##
 anova(m7)
 
-cor(ressub$cv_T2,log10(ressub$Mass_mg))
+cor.test(ressub$cv_T2,log10(ressub$Mass_mg))
 plot(ressub$cv_T2,log10(ressub$Mass_mg))
