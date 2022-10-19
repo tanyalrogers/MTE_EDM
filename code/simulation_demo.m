@@ -160,6 +160,7 @@ px=-out0.X(:,2)+max(out0.X(:,2)); py=-out0.X(:,1)+max(out0.X(:,1));pz=-out0.Y(:,
       plot3(px,py*0+max(py),pz,'-','color',shadow(2,:));
       plot3(px*0+max(px),py,pz,'-','color',shadow(1,:));hold off;
       set(gca,'view',[-56 56],'projection','perspective');title("Simplex");
+      xlabel('x(t)');ylabel('x(t+\tau)');zlabel('x(t+2\tau)');
       text(0.025,0.95,"(d)",'Units','normalized','FontSize',12)
 px=-out.X(:,2)+max(out.X(:,2)); py=-out.X(:,1)+max(out.X(:,1));pz=-out.Y(:,1)+max(out.Y(:,1));
       subplot(2,2,4);plot3(px,py,pz,'k');hold on;
@@ -167,6 +168,7 @@ px=-out.X(:,2)+max(out.X(:,2)); py=-out.X(:,1)+max(out.X(:,1));pz=-out.Y(:,1)+ma
       plot3(px,py*0+max(py),pz,'-','color',shadow(2,:));
       plot3(px*0+max(px),py,pz,'-','color',shadow(1,:));hold off;
       set(gca,'view',[-56 56],'projection','perspective');title("MTE-EDM");
+      xlabel('x(t)');ylabel('x(t+\mu)');zlabel('x(t+2\mu)');
       text(0.025,0.95,"(e)",'Units','normalized','FontSize',12)
       
 set(fig1, 'Units', 'Inches', 'Position', [0, 0, 9.1, 6.9], 'PaperUnits', 'Inches', 'PaperSize', [9.1, 6.9])
@@ -270,7 +272,7 @@ plot(t,X(:,1,Tset),'k','linewidth',1);xlabel('Week');ylabel('Abundance');xlim([0
 text(-0.2,1,"(b)",'Units','normalized','FontSize',12)
 %three-step error v. embedding dimension
 subplot(2,2,2);
-plot(Eg,1-min(mVE0,[],2),'k',Eg,1-min(mVE,[],2),'linewidth',3);xlim([1,7]);ylim([0,0.9]);
+plot(Eg,1-min(mVE0,[],2),'k',Eg,1-min(mVE,[],2),'linewidth',3);xlim([1,7]);ylim([-0.3,1]);
 xlabel('Embedding dimension');ylabel('R^2');legend("Simplex","MTE-EDM","Location","east");
 text(-0.2,1,"(c)",'Units','normalized','FontSize',12)
 %3-d plots of attractors
@@ -280,6 +282,7 @@ px=-out0.X(:,2)+max(out0.X(:,2)); py=-out0.X(:,1)+max(out0.X(:,1));pz=-out0.Y(:,
       plot3(px,py*0+max(py),pz,'-','color',shadow(2,:));
       plot3(px*0+max(px),py,pz,'-','color',shadow(1,:));hold off;
       set(gca,'view',[-56 56],'projection','perspective');title("Simplex");
+      xlabel('x(t)');ylabel('x(t+\tau)');zlabel('x(t+2\tau)');
       text(0.025,0.95,"(d)",'Units','normalized','FontSize',12)
 px=-out.X(:,2)+max(out.X(:,2)); py=-out.X(:,1)+max(out.X(:,1));pz=-out.Y(:,1)+max(out.Y(:,1));
       subplot(2,2,4);plot3(px,py,pz,'k');hold on;
@@ -287,11 +290,12 @@ px=-out.X(:,2)+max(out.X(:,2)); py=-out.X(:,1)+max(out.X(:,1));pz=-out.Y(:,1)+ma
       plot3(px,py*0+max(py),pz,'-','color',shadow(2,:));
       plot3(px*0+max(px),py,pz,'-','color',shadow(1,:));hold off;
       set(gca,'view',[-56 56],'projection','perspective');title("MTE-EDM");
+      xlabel('x(t)');ylabel('x(t+\mu)');zlabel('x(t+2\mu)');
       text(0.025,0.95,"(e)",'Units','normalized','FontSize',12)
 
 set(fig2, 'Units', 'Inches', 'Position', [0, 0, 9.1, 6.9], 'PaperUnits', 'Inches', 'PaperSize', [9.1, 6.9])
 exportgraphics(fig2,'../figures/simfig2.png',"Resolution",300)
-%exportgraphics(fig2,'../figures/fig1.pdf','ContentType','vector')
+exportgraphics(fig2,'../figures/Fig2.pdf','ContentType','vector')
  
 %% quick function to integrate HP model
 function[xtp1]=RK4(x0,s,tt,ODE)
